@@ -24,6 +24,10 @@ namespace LSolutions.EfObjectContext.Infrastructure
 
         #region Ctor
 
+        /// <summary>
+        ///     EF Repository
+        /// </summary>
+        /// <param name="context">IDbContext</param>
         public EfRepository(IDbContext context)
         {
             _context = context;
@@ -217,7 +221,7 @@ namespace LSolutions.EfObjectContext.Infrastructure
         /// <param name="entity">Entity</param>
         public virtual void UpdateAndDetach(TEntity entity)
         {
-            Insert(entity);
+            Update(entity);
             DetachAllEntities();
         }
 
@@ -227,7 +231,7 @@ namespace LSolutions.EfObjectContext.Infrastructure
         /// <param name="entities">Entities</param>
         public virtual void UpdateAndDetach(IEnumerable<TEntity> entities)
         {
-            Insert(entities);
+            Update(entities);
             DetachAllEntities();
         }
 
@@ -279,7 +283,7 @@ namespace LSolutions.EfObjectContext.Infrastructure
         /// <param name="entity">Entity</param>
         public virtual void DeleteAndDetach(TEntity entity)
         {
-            Insert(entity);
+            Delete(entity);
             DetachAllEntities();
         }
 
@@ -289,7 +293,7 @@ namespace LSolutions.EfObjectContext.Infrastructure
         /// <param name="entities">Entities</param>
         public virtual void DeleteAndDetach(IEnumerable<TEntity> entities)
         {
-            Insert(entities);
+            Delete(entities);
             DetachAllEntities();
         }
 

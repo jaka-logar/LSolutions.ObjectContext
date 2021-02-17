@@ -19,18 +19,18 @@ Packed as two NuGet packages in case of you have database related code in separa
     {
         public int Id { get; set; }
         public string Sku { get; set; }
-	    public string Ean { get; set; }
+	public string Ean { get; set; }
     }
 ```
  2. Your ObjectContext implementation must extend BaseObjectContext.
  3. Register ObjectContext and EfRepository.
 ```csharp 
-	services.AddDbContext<IDbContext, ObjectContext>();
+    services.AddDbContext<IDbContext, ObjectContext>();
     services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 ```
  4. Create entities database mapping using fluent API.
 ```csharp
-	internal class ProductMap : CustomEntityTypeConfiguration<Product>
+    internal class ProductMap : CustomEntityTypeConfiguration<Product>
     {
         public override void Configure(EntityTypeBuilder<Product> builder)
         {
@@ -52,7 +52,7 @@ Packed as two NuGet packages in case of you have database related code in separa
 ```
 5. Implement database queries
 ```csharp
-	public class ProductService : IProductService
+    public class ProductService : IProductService
     {
         private readonly IRepository<Product> _productRepository;
 
@@ -75,5 +75,5 @@ Packed as two NuGet packages in case of you have database related code in separa
         {
             _productRepository.Insert(product);
         }
-	} 
+    } 
 ```

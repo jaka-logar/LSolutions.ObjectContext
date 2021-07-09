@@ -7,9 +7,10 @@
     <PackageProjectUrl>https://github.com/jaka-logar/LSolutions.ObjectContext</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jaka-logar/LSolutions.ObjectContext</RepositoryUrl>
     <Description>EntityFramework Object Context with fluent API mapping configuration</Description>
-    <Version>1.1.0</Version>
-    <PackageReleaseNotes>- Target netstandard 2.0 and netstandard 2.1
-- Package Microsoft.EntityFrameworkCore version 5.0.* used with netstandard 2.1</PackageReleaseNotes>
+    <Version>1.2.0</Version>
+    <PackageReleaseNotes>- Async methods supported</PackageReleaseNotes>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

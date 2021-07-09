@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using LSolutions.EntityRepository.Domain;
 
 namespace LSolutions.EntityRepository.Data
@@ -8,9 +9,16 @@ namespace LSolutions.EntityRepository.Data
     ///     Represents an entity repository
     /// </summary>
     /// <typeparam name="TEntity">Entity type</typeparam>
-    public partial interface IRepository<TEntity> where TEntity : BaseEntity
+    public interface IRepository<TEntity> where TEntity : BaseEntity
     {
         #region Methods
+
+        /// <summary>
+        ///     Get entity by identifier
+        /// </summary>
+        /// <param name="id">Identifier</param>
+        /// <returns>Entity</returns>
+        TEntity GetById(object id);
 
         /// <summary>
         ///     Insert entity
@@ -19,10 +27,22 @@ namespace LSolutions.EntityRepository.Data
         void Insert(TEntity entity);
 
         /// <summary>
+        ///     Asynchronously insert entity
+        /// </summary>
+        /// <param name="entity">Entity</param>
+        Task InsertAsync(TEntity entity);
+
+        /// <summary>
         ///     Insert entities
         /// </summary>
         /// <param name="entities">Entities</param>
         void Insert(IEnumerable<TEntity> entities);
+
+        /// <summary>
+        ///     Asynchronously insert entities
+        /// </summary>
+        /// <param name="entities">Entities</param>
+        Task InsertAsync(IEnumerable<TEntity> entities);
 
         /// <summary>
         ///     Insert entity and clear change tracker
@@ -31,10 +51,22 @@ namespace LSolutions.EntityRepository.Data
         void InsertAndDetach(TEntity entity);
 
         /// <summary>
+        ///     Asynchronously insert entity and clear change tracker
+        /// </summary>
+        /// <param name="entity">Entity</param>
+        Task InsertAndDetachAsync(TEntity entity);
+
+        /// <summary>
         ///     Insert entities and clear change tracker
         /// </summary>
         /// <param name="entities">Entities</param>
         void InsertAndDetach(IEnumerable<TEntity> entities);
+
+        /// <summary>
+        ///     Asynchronously insert entities and clear change tracker
+        /// </summary>
+        /// <param name="entities">Entities</param>
+        Task InsertAndDetachAsync(IEnumerable<TEntity> entities);
 
         /// <summary>
         ///     Update entity
@@ -43,10 +75,22 @@ namespace LSolutions.EntityRepository.Data
         void Update(TEntity entity);
 
         /// <summary>
+        ///     Asynchronously update entity
+        /// </summary>
+        /// <param name="entity">Entity</param>
+        Task UpdateAsync(TEntity entity);
+
+        /// <summary>
         ///     Update entities
         /// </summary>
         /// <param name="entities">Entities</param>
         void Update(IEnumerable<TEntity> entities);
+
+        /// <summary>
+        ///     Asynchronously update entities
+        /// </summary>
+        /// <param name="entities">Entities</param>
+        Task UpdateAsync(IEnumerable<TEntity> entities);
 
         /// <summary>
         ///     Update entity and clear change tracker
@@ -55,10 +99,22 @@ namespace LSolutions.EntityRepository.Data
         void UpdateAndDetach(TEntity entity);
 
         /// <summary>
+        ///     Asynchronously update entity and clear change tracker
+        /// </summary>
+        /// <param name="entity">Entity</param>
+        Task UpdateAndDetachAsync(TEntity entity);
+
+        /// <summary>
         ///     Update entities and clear change tracker
         /// </summary>
         /// <param name="entities">Entities</param>
         void UpdateAndDetach(IEnumerable<TEntity> entities);
+
+        /// <summary>
+        ///     Asynchronously update entities and clear change tracker
+        /// </summary>
+        /// <param name="entities">Entities</param>
+        Task UpdateAndDetachAsync(IEnumerable<TEntity> entities);
 
         /// <summary>
         ///     Delete entity
@@ -67,10 +123,22 @@ namespace LSolutions.EntityRepository.Data
         void Delete(TEntity entity);
 
         /// <summary>
+        ///     Asynchronously delete entity
+        /// </summary>
+        /// <param name="entity">Entity</param>
+        Task DeleteAsync(TEntity entity);
+
+        /// <summary>
         ///     Delete entities
         /// </summary>
         /// <param name="entities">Entities</param>
         void Delete(IEnumerable<TEntity> entities);
+
+        /// <summary>
+        ///     Asynchronously delete entities
+        /// </summary>
+        /// <param name="entities">Entities</param>
+        Task DeleteAsync(IEnumerable<TEntity> entities);
 
         /// <summary>
         ///     Delete entity and clear change tracker
@@ -79,10 +147,22 @@ namespace LSolutions.EntityRepository.Data
         void DeleteAndDetach(TEntity entity);
 
         /// <summary>
+        ///     Asynchronously delete entity and clear change tracker
+        /// </summary>
+        /// <param name="entity">Entity</param>
+        Task DeleteAndDetachAsync(TEntity entity);
+
+        /// <summary>
         ///     Delete entities and clear change tracker
         /// </summary>
         /// <param name="entities">Entities</param>
         void DeleteAndDetach(IEnumerable<TEntity> entities);
+
+        /// <summary>
+        ///     Asynchronously delete entities and clear change tracker
+        /// </summary>
+        /// <param name="entities">Entities</param>
+        Task DeleteAndDetachAsync(IEnumerable<TEntity> entities);
 
         #endregion
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using LSolutions.EntityRepository.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -24,6 +26,12 @@ namespace LSolutions.EfObjectContext.Infrastructure
         /// </summary>
         /// <returns>The number of state entries written to the database</returns>
         int SaveChanges();
+
+        /// <summary>
+        ///     Asynchronously saves all changes made in this context to the underlying database.
+        /// </summary>
+        /// <returns>The number of state entries written to the database</returns>
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         ///     Detach an entity from the context

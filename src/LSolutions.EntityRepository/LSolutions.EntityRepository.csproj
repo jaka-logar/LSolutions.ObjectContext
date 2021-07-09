@@ -9,8 +9,10 @@
     <PackageProjectUrl>https://github.com/jaka-logar/LSolutions.ObjectContext</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jaka-logar/LSolutions.ObjectContext</RepositoryUrl>
     <Description>BaseEntity and IRepositry as requirements for ObjectContext</Description>
-    <Version>1.1.0</Version>
-    <PackageReleaseNotes>- Target netstandard 2.0 and netstandard 2.1</PackageReleaseNotes>
+    <Version>1.2.0</Version>
+    <PackageReleaseNotes>- Async methods supported</PackageReleaseNotes>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
